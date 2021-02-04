@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarouselContentView.MainPage">
+
+    <StackLayout Orientation="Vertical">
+
+        <CarouselView x:Name="CarouselViewControl"
+                ItemsSource="{Binding ItemCollection}"
+                IndicatorView="IndicatorViewControl"
+                HorizontalScrollBarVisibility="Never"
+                Loop="True">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding .}" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="IndicatorViewControl"
+                HorizontalOptions="Center"
+                BackgroundColor="Gray"
+                IndicatorColor="White"
+                SelectedIndicatorColor="Blue"
+    
+                WidthRequest="100"
+                HeightRequest="30"/>
+
+    </StackLayout>
+
+</ContentPage>
